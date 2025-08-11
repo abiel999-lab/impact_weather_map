@@ -1,0 +1,38 @@
+/* src/index.css */
+@import "tailwindcss";
+
+/* Agar varian `dark:` bekerja via class .dark */
+:root { color-scheme: light; }
+.dark { color-scheme: dark; }
+
+html, body, #root { height: 100%; }
+
+body {
+  /* warna dasar mengikuti tema */
+  @apply bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100;
+  margin: 0;
+}
+/* A11y: fokus ring jelas */
+:focus-visible {
+  outline: 3px solid #7c3aed; /* ungu */
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+/* Skip to content (muncul saat fokus) */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: #7c3aed;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 8px;
+  z-index: 9999;
+}
+.skip-link:focus {
+  left: 12px;
+  top: 12px;
+}
+
+

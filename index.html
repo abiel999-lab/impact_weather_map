@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#ac94d8" />
+    <link rel="apple-touch-icon" href="/logo.png" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Impact Weather Map</title>
+  </head>
+  <body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      try {
+        document.documentElement.classList.toggle(
+          'dark',
+          localStorage.getItem('iwm:theme') === 'true'
+        );
+      } catch (e) {}
+    </script>
+  </body>
+</html>
