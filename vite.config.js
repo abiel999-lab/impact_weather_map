@@ -3,5 +3,8 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
+  plugins: [react()],
+  // pakai nama repo sebagai base agar asset & SW betul di GitHub Pages
+  base: '/impact_weather_map/',
 })
+

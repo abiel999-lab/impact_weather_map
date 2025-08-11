@@ -13,10 +13,12 @@ root.render(
 );
 
 // SW register harus di luar render
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
     navigator.serviceWorker
-      .register("/sw.js")
-      .catch((err) => console.warn("SW register failed:", err));
+      // gunakan BASE_URL supaya path valid di Pages subfolder
+      .register(`${import.meta.env.BASE_URL}sw.js`)
+      .catch((err) => console.warn('SW register failed:', err));
   });
 }
+
